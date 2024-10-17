@@ -22,11 +22,6 @@ public class Utilidad {
         System.out.println("--- ¡" + mensajeExito + "! ---");
     }
 
-    public static void limpiarPantalla() {
-        System.out.print("\033[H\033[2J");
-        System.out.flush();
-    }
-
     public static void regresar() {
         System.out.println("Regresando al menú principal...");
     }
@@ -35,7 +30,10 @@ public class Utilidad {
         return rut.matches("^[0-9]{1,2}(\\.[0-9]{3}){2}-[0-9kK]$");
     }
 
-    //dar tiempo al usuario para leer el mensaje
+    /**
+     * Pausa la ejecución del programa para permitir que el usuario lea el mensaje en pantalla.
+     * El programa continuará cuando el usuario presione la tecla Enter.
+     */
     public static void pausar() {
         System.out.println("Presione Enter para continuar...");
         scanner = new Scanner(System.in);

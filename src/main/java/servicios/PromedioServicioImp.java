@@ -2,14 +2,8 @@ package servicios;
 
 import java.util.List;
 
-public class PromedioServicioImp {
+public class PromedioServicioImp implements PromedioServicio{
     
-    /**
-     * Calcula el promedio de una lista de notas.
-     *
-     * @param notas La lista de notas a promediar.
-     * @return El promedio de las notas, o 0.0 si la lista está vacía.
-     */
     public Double calcularPromedio(List<Double> notas) {
         if (notas == null || notas.isEmpty()) {
             return 0.0; 

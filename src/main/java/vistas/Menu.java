@@ -179,13 +179,13 @@ public class Menu extends MenuTemplate {
 			Utilidad.mostrarMensaje(mensaje);
 			try {
 				opcion = leer.nextInt();
-				leer.nextLine(); // Limpiar el buffer
+				leer.nextLine();
 				if (opcion < 1 || opcion > maxOpciones) {
-					Utilidad.mostrarError("Error: Opción fuera de rango. Intente nuevamente.");
-					Utilidad.pausar(); // Pausa para que el usuario lea el mensaje
+					Utilidad.mostrarError("Opción fuera de rango. Intente nuevamente.");
+					Utilidad.pausar(); 
 				}
 			} catch (InputMismatchException e) {
-				Utilidad.mostrarError("Error: Debe ingresar un número válido.");
+				Utilidad.mostrarError("Debe ingresar un número válido.");
 				leer.nextLine(); 
 				Utilidad.pausar(); 
 			}
@@ -201,12 +201,13 @@ public class Menu extends MenuTemplate {
 				nota = leer.nextDouble();
 				leer.nextLine();
 				if (nota < 1.0 || nota > 7.0) {
-					Utilidad.mostrarError("Error: La nota debe estar entre 1.0 y 7.0.");
+					Utilidad.mostrarError("La nota debe estar entre 1.0 y 7.0.");
 					nota = -1; 
+
 					Utilidad.pausar(); 
 				}
 			} catch (InputMismatchException e) {
-				Utilidad.mostrarError("Error: Debe ingresar un número válido.");
+				Utilidad.mostrarError("Debe ingresar un número válido.");
 				leer.nextLine(); 
 				Utilidad.pausar(); 
 			}

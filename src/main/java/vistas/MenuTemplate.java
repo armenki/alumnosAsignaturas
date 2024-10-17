@@ -4,26 +4,34 @@ import java.util.Scanner;
 import java.util.InputMismatchException;
 import utilidades.Utilidad;
 
+/**
+ * Plantilla para la creación de un menú interactivo con opciones predefinidas. 
+ * Se encarga de gestionar la interacción con el usuario,
+ * mostrando un menú en consola y manejando las diferentes opciones disponibles.
+ * 
+ * La clase hija debe implementar las siguientes funcionalidades:
+ * - Crear un nuevo alumno
+ * - Listar alumnos existentes
+ * - Agregar una materia a un alumno
+ * - Asignar una nota a un alumno en una materia
+ * - Exportar datos
+ * - Terminar el programa
+ */
 public abstract class MenuTemplate {
 
 	protected Scanner leer;
-
+ 
 	public MenuTemplate() {
 		leer = new Scanner(System.in);
 	}
 
-	public abstract void crearAlumno();
-
+	public abstract void crearAlumno(); 
 	public abstract void listarAlumnos();
-
 	public abstract void agregarMateria();
-
 	public abstract void agregarNotaPasoUno();
-
 	public abstract void exportarDatos();
-
 	public abstract void terminarPrograma();
-
+	
 	public final void iniciarMenu() {
 		int op = 0;
 
