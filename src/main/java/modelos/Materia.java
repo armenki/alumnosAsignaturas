@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Materia {
-	protected MateriaEnum nombre;
-	protected List<Double> notas;
-	
+	private MateriaEnum nombre;
+	private List<Double> notas;
+
 	public Materia() {
 		notas = new ArrayList<Double>();
 	}
@@ -26,7 +26,5 @@ public class Materia {
 	public void setNotas(List<Double> notas) {
 		this.notas = notas;
 	}
-	
-	
 
 }

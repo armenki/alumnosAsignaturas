@@ -5,27 +5,24 @@ import java.util.InputMismatchException;
 import utilidades.Utilidad;
 
 /**
- * Plantilla para la creación de un menú interactivo con opciones predefinidas. 
- * Se encarga de gestionar la interacción con el usuario,
- * mostrando un menú en consola y manejando las diferentes opciones disponibles.
+ * Plantilla para la creación de un menú interactivo con opciones predefinidas.
+ * Se encarga de gestionar la interacción con el usuario, mostrando un menú en
+ * consola y manejando las diferentes opciones disponibles.
  * 
- * La clase hija debe implementar las siguientes funcionalidades:
- * - Crear un nuevo alumno
- * - Listar alumnos existentes
- * - Agregar una materia a un alumno
- * - Asignar una nota a un alumno en una materia
- * - Exportar datos
- * - Terminar el programa
+ * La clase hija debe implementar las siguientes funcionalidades: - Crear un
+ * nuevo alumno - Listar alumnos existentes - Agregar una materia a un alumno -
+ * Asignar una nota a un alumno en una materia - Exportar datos - Terminar el
+ * programa
  */
 public abstract class MenuTemplate {
 
 	protected Scanner leer;
- 
+
 	public MenuTemplate() {
 		leer = new Scanner(System.in);
 	}
 
-	public abstract void crearAlumno(); 
+	public abstract void crearAlumno();
 	public abstract void listarAlumnos();
 	public abstract void agregarMateria();
 	public abstract void agregarNotaPasoUno();
@@ -34,7 +31,6 @@ public abstract class MenuTemplate {
 	
 	public final void iniciarMenu() {
 		int op = 0;
-
 		do {
 			System.out.println("------MENU------");
 			System.out.println("1. Crear alumnos");
@@ -46,8 +42,7 @@ public abstract class MenuTemplate {
 			try {
 				System.out.print("Seleccion: ");
 				op = leer.nextInt();
-				leer.nextLine(); 
-
+				leer.nextLine();
 				switch (op) {
 				case 1:
 					crearAlumno();
@@ -66,17 +61,18 @@ public abstract class MenuTemplate {
 					break;
 				case 6:
 					terminarPrograma();
-					return; 
+					return;
 				default:
 					Utilidad.mostrarError("Opción no válida, intente nuevamente.");
 					break;
 				}
 			} catch (InputMismatchException e) {
-				Utilidad.mostrarError("Error: Debe ingresar un número. Intente de nuevo.");
+				Utilidad.mostrarError("Debe ingresar un número. Intente de nuevo.");
 				leer.nextLine();
 			} catch (Exception e) {
-				Utilidad.mostrarError("Error inesperado: " + e.getMessage());
+				Utilidad.mostrarError("inesperado: " + e.getMessage());
 			}
-		} while (true); 
+
+		} while (true);
 	}
 }

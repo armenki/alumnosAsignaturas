@@ -4,14 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Alumno {
-	protected String rut;
-	protected String nombre;
-	protected String apellido;
-	protected String direccion;
-	protected List<Materia> listaMateria;
-	
+	private String rut;
+	private String nombre;
+	private String apellido;
+	private String direccion;
+	private List<Materia> listaMateria;
+
 	public Alumno() {
-		 listaMateria = new ArrayList<Materia>();
+		listaMateria = new ArrayList<Materia>();
 	}
 
 	public String getRut() {
@@ -53,10 +53,5 @@ public class Alumno {
 	public void setListaMateria(List<Materia> listaMateria) {
 		this.listaMateria = listaMateria;
 	}
-	
-
-	
-	
-	
 
 }
